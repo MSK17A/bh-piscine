@@ -1,1 +1,10 @@
-find -name 'a*' | find -name '*z' | find -name 'z*a!'
+if [[ $(find -name '*a') ]] ;
+then
+echo case1
+elif [[ $(find -name 'z*') ]] ;
+then
+echo case2
+elif [[ $(find -name 'z*a!') ]] ;
+then
+echo case3
+fi
