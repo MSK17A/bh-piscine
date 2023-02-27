@@ -1,4 +1,4 @@
-module bh-piscine
+module piscine
 
 go 1.19
 
