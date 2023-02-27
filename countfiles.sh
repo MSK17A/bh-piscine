@@ -1,2 +1,2 @@
 sub=$(ls | wc -l)
-echo $((sub+1)
+echo $((sub+1))
