@@ -15,9 +15,3 @@ func main() {
 	z01.PrintRune('9')
 	z01.PrintRune('\n')
 }
-	
-	
-/*for i := 1; i <= 9; i++ {
-	z01.PrintRune(rune(i))
-}
-z01.PrintRune('\n')*/
