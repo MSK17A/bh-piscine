@@ -1,1 +1,1 @@
-find -name '*.sh' | sort -r | cut -d "." -f 3-
+find -name '*.sh' -exec basename {} .sh \; | sort -r
