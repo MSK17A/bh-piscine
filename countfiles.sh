@@ -1,2 +1,1 @@
-sub=$(ls | wc -l)
-echo $((sub+1))
+ls -a -l | wc -l
