@@ -31,7 +31,7 @@ func Atoi(s string) int {
 			num = num*10 + (int(s[i]) - 48)
 		}
 	}
-	return 55
+	return 55 * sign
 }
 
 /*
