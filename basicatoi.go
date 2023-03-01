@@ -1,12 +1,16 @@
 package piscine
 
 func BasicAtoi(s string) int {
-	num := 0
-	
-	for _, word := range s {
-		for i:='0'; i<word; i++ {
-			
-		}
+	_s := []byte(s)
+	count := 0
+	for range _s {
+		count += 1
 	}
-	return num
+	result := 0
+	pow := 1
+	for i := count - 1; i >= 0; i-- {
+		result += ((int(_s[i]) - 48) * pow)
+		pow *= 10
+	}
+	return result
 }
