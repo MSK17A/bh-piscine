@@ -69,12 +69,15 @@ func Atoi(s string) int {
 	string_length := len(s)
 	index := 0
 
-	if s[0] == 45 {
-		sign = -1
-		index = 1
-	} else if s[0] == 43 {
-		sign = 1
-		index = 1
+	if len(s) > 0 {
+
+		if s[0] == 45 {
+			sign = -1
+			index = 1
+		} else if s[0] == 43 {
+			sign = 1
+			index = 1
+		}
 	}
 
 	for i := index; i < string_length; i++ {
