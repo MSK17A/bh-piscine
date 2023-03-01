@@ -4,6 +4,7 @@ func BasicAtoi(s string) int {
 	num := 0
 	if StrLen(s) < 3 {
 		num = int(s[0] - 48)
+		return num
 	} else {
 		num = int(s[0]-48)*10 + (int(s[1]) - 48)
 		for i := 1; i < (StrLen(s) - 1); i++ {
