@@ -70,7 +70,6 @@ func Atoi(s string) int {
 	index := 0
 
 	if len(s) > 0 {
-
 		if s[0] == 45 {
 			sign = -1
 			index = 1
