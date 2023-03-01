@@ -2,7 +2,7 @@ package piscine
 
 func BasicAtoi(s string) int {
 	num := 0
-	if StrLen(s) <= 1 {
+	if StrLen(s) < 3 {
 		num = int(s[0] - 48)
 	} else {
 		num = int(s[0]-48)*10 + (int(s[1]) - 48)
