@@ -8,7 +8,7 @@ func conv_to_ASCII(num, sign int) {
 	}
 	digit := int(num % 10 * sign)
 	_num := int(num / 10)
-	conv_to_ASCII(_num, sign) // Recursive
+	conv_to_ASCII(_num, sign)
 	z01.PrintRune(48 + rune(digit))
 }
 func PrintNbr(n int) {
