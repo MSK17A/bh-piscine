@@ -6,7 +6,6 @@ func conv_to_ASCII(num, sign int) {
 	if num == 0 {
 		return
 	}
-
 	digit := int(num % 10 * sign)
 	_num := int(num / 10)
 	conv_to_ASCII(_num, sign) // Recursive
@@ -18,7 +17,6 @@ func PrintNbr(n int) {
 		z01.PrintRune('0')
 		return
 	}
-
 	if n < 0 {
 		sign *= -1
 		z01.PrintRune('-')
