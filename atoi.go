@@ -77,6 +77,8 @@ func Atoi(s string) int {
 			sign = 1
 			index = 1
 		}
+	} else {
+		return 0
 	}
 
 	for i := index; i < string_length; i++ {
