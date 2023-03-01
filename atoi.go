@@ -26,11 +26,11 @@ func Atoi(s string) int {
 		for i := 1; i < string_length; i++ {
 			num = num*10 + (int(s[i]) - 48)
 		}
-	} /*else {
+	} else {
 		for i := 0; i < string_length; i++ {
 			num = num*10 + (int(s[i]) - 48)
 		}
-	}*/
+	}
 	return num * sign
 }
 
