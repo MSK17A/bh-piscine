@@ -2,7 +2,7 @@ package piscine
 
 import "github.com/01-edu/z01"
 
-func conv_to_ASCII(num, sign int) {
+func conv_to_ASCII(num int, sign int) {
 	if num == 0 {
 		return
 	}
