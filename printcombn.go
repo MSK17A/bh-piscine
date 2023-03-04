@@ -1,6 +1,6 @@
 package piscine
 
-import "fmt"
+/*import "fmt"
 
 func PrintCombN(n int) {
 	max_num:=0
@@ -18,4 +18,4 @@ func PrintCombN(n int) {
 		}
 		fmt.Println(i)
 	}
-}
+}*/
