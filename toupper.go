@@ -2,7 +2,7 @@ package piscine
 
 func ToUpper(s string) string {
 	if s == "" {
-		return '0'
+		return "0"
 	}
 
 	s_upper := []rune(s)
