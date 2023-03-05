@@ -3,6 +3,5 @@
   "go.delveConfig": {},
   "gopls": {
     "formatting.gofumpt": true
-
   }
 }
