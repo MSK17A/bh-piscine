@@ -6,7 +6,7 @@ func IsAlpha(s string) bool {
 	}
 
 	for _, word := range s {
-		if (word < 65 || word > 90) && (word < 97 || word > 122) {
+		if (word < 65 || word > 90) && (word < 97 || word > 122) && (word < 48 || word > 57) {
 			return false
 		}
 	}
