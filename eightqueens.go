@@ -35,7 +35,6 @@ func placeQueens(col int) {
 		for i := 0; i < 8; i++ {
 			for j := 0; j < 8; j++ {
 				if board[j][i] == 1 {
-
 					z01.PrintRune(rune(j + 48 + 1))
 				}
 			}
@@ -52,7 +51,6 @@ func placeQueens(col int) {
 		// Set to zero to backtrack
 		board[i][col] = 0
 	}
-
 	return
 }
 
