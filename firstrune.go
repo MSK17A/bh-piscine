@@ -1,9 +1,15 @@
 package piscine
 
 func FirstRune(s string) rune {
+	var result rune
 	if len(s) < 0 {
 		return 0
 	}
 
-	return rune(s[0])
+	for _, word := range s {
+		result = word
+		break
+	}
+
+	return result
 }
