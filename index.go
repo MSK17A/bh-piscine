@@ -19,10 +19,15 @@ func Index(s string, toFind string) int {
 	f_rune_length := strLen(toFind)
 	Similarity_count := 0
 
+	// Loop through the length of the input string
 	for i := 0; i <= s_rune_length; i++ {
+		// If the first rune of the toFind string is the same as the input string
 		if s_rune[i] == f_rune[0] {
+			// Check if the other letters are the same (loop through all the toFind runes)
 			for j := 0; j <= f_rune_length; j++ {
+				// Just to make sure we don't loop outside of the input string I make this check
 				if i+j <= s_rune_length {
+					// If the next
 					if s_rune[i+j] == f_rune[j] {
 						Similarity_count++
 					}
