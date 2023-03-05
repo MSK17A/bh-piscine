@@ -6,7 +6,7 @@ func NRune(s string, n int) rune {
 		return 0
 	}
 	for counter, word := range s {
-		if counter == n {
+		if counter-1 == n {
 			result = word
 			return result
 		}
