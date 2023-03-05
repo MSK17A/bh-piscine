@@ -6,7 +6,6 @@ func IsPrintable(s string) bool {
 	}
 
 	for _, word := range s {
-
 		if word <= 32 {
 			return false
 		}
