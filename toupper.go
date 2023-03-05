@@ -1,7 +1,6 @@
 package piscine
 
 func ToUpper(s string) string {
-
 	if s == "" {
 		return '0'
 	}
