@@ -1,6 +1,6 @@
 package main
 
-import (
+/*import (
 	"github.com/01-edu/z01"
 
 	"piscine"
@@ -12,4 +12,4 @@ func main() {
 	z01.PrintRune(piscine.FirstRune("Ola!"))
 	z01.PrintRune(piscine.FirstRune("♥01")) // ♥
 	z01.PrintRune('\n')
-}
+}*/
