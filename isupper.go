@@ -6,7 +6,7 @@ func IsUpper(s string) bool {
 	}
 
 	for _, word := range s {
-		if word <= 65 || word >= 90 {
+		if word < 65 || word > 90 {
 			return false
 		}
 	}
