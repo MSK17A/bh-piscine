@@ -3,7 +3,9 @@ package piscine
 func nbrToString(num int) string {
 	var string_num string
 	temp_num := num
-
+	if num == 0 {
+		string_num += string(48)
+	}
 	for i := 0; temp_num > 0; i++ {
 		string_num += string(temp_num%10 + 48)
 		temp_num /= 10
