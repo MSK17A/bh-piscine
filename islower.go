@@ -6,7 +6,7 @@ func IsLower(s string) bool {
 	}
 
 	for _, word := range s {
-		if word <= 97 || word >= 122 {
+		if word < 97 || word > 122 {
 			return false
 		}
 	}
