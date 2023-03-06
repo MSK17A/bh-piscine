@@ -1,7 +1,5 @@
 package piscine
 
-import "github.com/01-edu/z01"
-
 func nbrToString(num int) string {
 	var string_num string
 	temp_num := num
