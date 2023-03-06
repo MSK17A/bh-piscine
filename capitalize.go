@@ -30,8 +30,7 @@ func isAlphaNum(word rune) bool {
 
 func Capitalize(s string) string {
 	// If the previous rune contains non alphanumerical characters CAPITALIZE the current rune
-	// Other wise lower the current rune
-	// If the next rune is not alphanumerical (don't do anything)
+	// Otherwise lower the current rune
 	s_rune := []rune(s)
 	capitalize_flag := true
 
