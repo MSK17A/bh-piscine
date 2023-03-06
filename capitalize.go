@@ -1,5 +1,11 @@
 package piscine
 
+func runeIsAlpha(r rune) bool {
+	if (r < 65 || r > 90) && (r < 97 || r > 122) && (r < 48 || r > 57) {
+		return false
+	}
+	return true
+}
 func Capitalize(s string) string {
 	// If the previous rune contains non alphanumerical characters CAPITALIZE the current rune
 	// Other wise lower the current rune
@@ -8,16 +14,20 @@ func Capitalize(s string) string {
 	s_rune := []rune(s)
 	s_length := strLen(s)
 
-	for i := 0; i <= s_length; i++ {
+	if runeIsAlpha(s_rune[1]) {
+		// If it is lowercase then UPPERCASE IT
+		if s_rune[0] >= 97 && s_rune[0] <= 122 {
+			s_rune[0] -= 32
+		}
+	}
+
+	for i := 1; i <= s_length; i++ {
 		// if it is not alphanumerical (the previous rune)
-		if i > 0 && (s_rune[i-1] < 65 || s_rune[i-1] > 90) && (s_rune[i-1] < 97 || s_rune[i-1] > 122) && (s_rune[i-1] < 48 || s_rune[i-1] > 57) {
+		if !runeIsAlpha(s_rune[i-1]) && runeIsAlpha(s_rune[i+1]) {
 			// If it is lowercase then UPPERCASE IT
 			if s_rune[i] >= 97 && s_rune[i] <= 122 {
 				s_rune[i] -= 32
 			}
-		} else if i < s_length && (s_rune[i+1] < 65 || s_rune[i+1] > 90) && (s_rune[i+1] < 97 || s_rune[i+1] > 122) && (s_rune[i+1] < 48 || s_rune[i+1] > 57) {
-			// If it is lowercase then UPPERCASE IT
-			s_rune[i] = rune(s[i])
 		}
 	}
 	return string(s_rune)
