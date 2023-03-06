@@ -38,5 +38,4 @@ func StringSort(str string) string {
 
 func PrintNbrInOrder(n int) {
 	PrintStr(StringSort(nbrToString(n)))
-	z01.PrintRune('\n')
 }
