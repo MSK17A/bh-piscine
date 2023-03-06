@@ -6,6 +6,7 @@ func runeIsAlpha(r rune) bool {
 	}
 	return true
 }
+
 func Capitalize(s string) string {
 	// If the previous rune contains non alphanumerical characters CAPITALIZE the current rune
 	// Other wise lower the current rune
