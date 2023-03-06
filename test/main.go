@@ -1,10 +1,11 @@
 package main
 
-import (
+/*import (
 	"fmt"
 	"piscine"
-)
+)*/
+import "piscine"
 
 func main() {
-	fmt.Println(piscine.ToUpper("Hello! How are you?"))
+	piscine.PrintNbrInOrder(546521)
 }
