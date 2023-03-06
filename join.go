@@ -8,7 +8,7 @@ func Join(strs []string, sep string) string {
 			str += strs[i]
 			break
 		}
-		str += strs[i] + ":"
+		str += strs[i] + sep
 	}
 	return str
 }
