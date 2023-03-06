@@ -6,5 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Println(piscine.Capitalize("hello! How arE you? How+are+things+4you? h:"))
+	fmt.Println(piscine.Capitalize("hEllo! How arE you? How+are+things+4you? h:"))
 }

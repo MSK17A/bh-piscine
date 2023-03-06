@@ -27,6 +27,8 @@ func Capitalize(s string) string {
 			if s_rune[i] >= 97 && s_rune[i] <= 122 {
 				s_rune[i] -= 32
 			}
+		} else if s_rune[i] >= 65 && s_rune[i] <= 90 {
+			s_rune[i] += 32
 		}
 	}
 	return string(s_rune)
