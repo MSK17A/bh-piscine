@@ -23,10 +23,12 @@ func Capitalize(s string) string {
 
 	for i := 1; i <= s_length; i++ {
 		// if it is not alphanumerical (the previous rune)
-		if !runeIsAlpha(s_rune[i-1]) && runeIsAlpha(s_rune[i+1]) {
-			// If it is lowercase then UPPERCASE IT
-			if s_rune[i] >= 97 && s_rune[i] <= 122 {
-				s_rune[i] -= 32
+		if i < s_length {
+			if !runeIsAlpha(s_rune[i-1]) && runeIsAlpha(s_rune[i+1]) {
+				// If it is lowercase then UPPERCASE IT
+				if s_rune[i] >= 97 && s_rune[i] <= 122 {
+					s_rune[i] -= 32
+				}
 			}
 		} else if s_rune[i] >= 65 && s_rune[i] <= 90 && runeIsAlpha(s_rune[i-1]) {
 			s_rune[i] += 32
