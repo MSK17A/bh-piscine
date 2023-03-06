@@ -1,7 +1,6 @@
 package piscine
 
-//import "github.com/01-edu/z01"
-import "fmt"
+import "github.com/01-edu/z01"
 
 func nbrToString(num int) string {
 	var string_num string
@@ -38,6 +37,6 @@ func StringSort(str string) string {
 }
 
 func PrintNbrInOrder(n int) {
-	fmt.Println(StringSort(nbrToString(n)))
-
+	PrintStr(StringSort(nbrToString(n)))
+	z01.PrintRune('\n')
 }
