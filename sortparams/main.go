@@ -11,7 +11,7 @@ func main() {
 	SortedParams := []string(params[1:])
 	SortParamTable(SortedParams)
 
-	for i := 1; i < len(SortedParams); i++ {
+	for i := 0; i < len(SortedParams); i++ {
 		for _, word := range SortedParams[i] {
 			z01.PrintRune(word)
 		}
