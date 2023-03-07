@@ -7,9 +7,10 @@ import (
 )
 
 func main() {
-	arg := os.Args
-	for _, w := range os.arg[0] {
-		z01.PrintRune(w)
+	for counter, word := range os.Args[0] {
+		if(counter > 1) {
+			z01.PrintRune(word)
+		}
 	}
 	z01.PrintRune('\n')
 }
