@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+
 	"os"
 )
 
@@ -29,7 +30,6 @@ func main() {
 	if order_flag {
 		str_param = SortString(str_param)
 	}
-
 	fmt.Println(str_param)
 }
 
