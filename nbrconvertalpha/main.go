@@ -7,7 +7,6 @@ import (
 )
 
 func main() {
-
 	params := os.Args
 	capitalize := false
 	starting_index := 1
