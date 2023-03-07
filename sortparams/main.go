@@ -8,7 +8,7 @@ import (
 
 func main() {
 	params := os.Args
-	SortedParams := []string(params)
+	SortedParams := []string(params[1:])
 	SortParamTable(SortedParams)
 
 	for i := 1; i < len(SortedParams); i++ {
