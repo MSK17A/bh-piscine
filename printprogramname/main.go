@@ -8,7 +8,7 @@ import (
 
 func main() {
 	for counter, word := range os.Args[0] {
-		if(counter > 1) {
+		if counter > 1 {
 			z01.PrintRune(word)
 		}
 	}
