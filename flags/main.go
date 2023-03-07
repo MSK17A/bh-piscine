@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-
 	"os"
 )
 
@@ -11,11 +10,15 @@ func main() {
 	order_flag := false
 	var str_param string
 	var inserted_string string
+	print_help_flag := true
 
 	for _, param := range params {
 		// Search for --order or -o
 		if param == "-o" || param == "--order" {
 			order_flag = true
+		} else if param == "--help" || param == "-h" {
+			fmt.Printf("--insert\n  -i\n\t This flag inserts the string into the string passed as argument.\n--order\n  -o\n\t This flag will behave like a boolean, if it is called it will order the argument.\n")
+			print_help_flag = false
 		} else if param != "" && param[:1] == "-" {
 			if param[:3] == "-i=" {
 				inserted_string += param[3:]
@@ -25,12 +28,17 @@ func main() {
 		} else {
 			str_param += param
 		}
+		print_help_flag = false
 	}
-	str_param += inserted_string
-	if order_flag {
-		str_param = SortString(str_param)
+	if !print_help_flag {
+		str_param += inserted_string
+		if order_flag {
+			str_param = SortString(str_param)
+		}
+		fmt.Println(str_param)
+	} else {
+		fmt.Printf("--insert\n  -i\n\t This flag inserts the string into the string passed as argument.\n--order\n  -o\n\t This flag will behave like a boolean, if it is called it will order the argument.\n")
 	}
-	fmt.Println(str_param)
 }
 
 func SortString(str string) string {
