@@ -17,7 +17,7 @@ func main() {
 		if param == "-o" || param == "--order" {
 			order_flag = true
 		} else if param == "--help" || param == "-h" {
-			fmt.Printf("--insert\n  -i\n\t This flag inserts the string into the string passed as argument.\n--order\n  -o\n\t This flag will behave like a boolean, if it is called it will order the argument.\n")
+			fmt.Printf("--insert\n  -i\n\t This flag inserts the string into the string passed as argument.\n--order\n  -o\n\t This flag will behave like a boolean, if it is called it will order the argument.")
 			print_help_flag = false
 		} else if param != "" && param[:1] == "-" {
 			if param[:3] == "-i=" {
@@ -37,7 +37,7 @@ func main() {
 		}
 		fmt.Println(str_param)
 	} else {
-		fmt.Printf("--insert\n  -i\n\t This flag inserts the string into the string passed as argument.\n--order\n  -o\n\t This flag will behave like a boolean, if it is called it will order the argument.\n")
+		fmt.Printf("--insert\n  -i\n\t This flag inserts the string into the string passed as argument.\n--order\n  -o\n\t This flag will behave like a boolean, if it is called it will order the argument.")
 	}
 }
 
