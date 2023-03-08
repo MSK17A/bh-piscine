@@ -21,26 +21,16 @@ package piscine
 	}
 */
 func Split(s string, sep string) []string {
-	str_len := len(s)             // Input string length
-	sep_len := len(sep)           // Seperator string length
-	sep_counts := 0               // Seperator counter
-	start_str_counts_flag := true // reset start index flag
-	str_Start := 0                // The index of which the string starts
-	str_end := 0                  // The index of which the string ends
-	result_arr_index := 0         // The index of the result array
-
-	/* This routine will count how many seps are in the string */
-	for idx := 0; idx < str_len; idx++ {
-		// Check if not end of the string and search for the seperator string
-		if idx+sep_len < str_len && s[idx:idx+sep_len] == sep {
-			// Increase the count + 1
-			sep_counts++
-		}
-	}
+	str_len := len(s)                 // Input string length
+	sep_len := len(sep)               // Seperator string length
+	sep_counts := sep_counter(s, sep) // Seperators count
+	start_str_counts_flag := true     // reset start index flag
+	str_Start := 0                    // The index of which the string starts
+	str_end := 0                      // The index of which the string ends
+	result_arr_index := 0             // The index of the result array
 
 	result_arr := make([]string, sep_counts+1) // Allocate space for the results
 
-	/* Now loop again */
 	for idx := 0; idx <= str_len; idx++ {
 		// Save the start index for the string
 		if start_str_counts_flag {
@@ -55,7 +45,7 @@ func Split(s string, sep string) []string {
 			result_arr_index++                                  // Go to the next index
 			idx += sep_len - 1                                  // Skip the string index by length of seperation to prevent insert it into results array
 		}
-		// If we reach the end just insert the last word into the results array
+		// If we reach the end, then insert the last word into the results array
 		if idx == str_len {
 			str_end = idx
 			result_arr[result_arr_index] = s[str_Start:str_end]
@@ -63,4 +53,20 @@ func Split(s string, sep string) []string {
 	}
 
 	return result_arr
+}
+
+/* This routine will count how many seps are in the string */
+func sep_counter(str, sep string) int {
+	str_len := len(str) // Input string length
+	sep_len := len(sep) // Seperator string length
+	sep_counts := 0     // Seperator counter
+
+	for idx := 0; idx < str_len; idx++ {
+		// Check if not end of the string and search for the seperator string
+		if idx+sep_len < str_len && str[idx:idx+sep_len] == sep {
+			// Increase the count + 1
+			sep_counts++
+		}
+	}
+	return sep_counts
 }
