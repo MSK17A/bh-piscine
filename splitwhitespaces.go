@@ -5,9 +5,9 @@ func SplitWhiteSpaces(s string) []string {
 	var str_temp []rune
 
 	for _, char := range s {
-		if char != ' ' && char != 10 && char != 9 {
+		if char != ' ' && char != '\t' && char != '\n' {
 			str_temp = append(str_temp, char)
-		} else {
+		} else if str_temp != nil {
 			strArray = append(strArray, string(str_temp))
 			str_temp = nil
 		}
