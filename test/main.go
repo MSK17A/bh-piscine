@@ -7,6 +7,6 @@ import (
 )
 
 func main() {
-	s := "HelloHAAhowHAAareHAAyou?"
-	fmt.Printf("%#v\n", piscine.Split(s, "HAA"))
+	s := "Baasaa,,Taasa,,Jaaakaaa?"
+	fmt.Printf("%#v\n", piscine.Split(s, ",,"))
 }
