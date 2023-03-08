@@ -21,7 +21,6 @@ package piscine
 	}
 */
 func Split(s string, sep string) []string {
-
 	str_len := len(s)             // Input string length
 	sep_len := len(sep)           // Seperator string length
 	sep_counts := 0               // Seperator counter
