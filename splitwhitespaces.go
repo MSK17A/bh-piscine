@@ -13,6 +13,8 @@ func SplitWhiteSpaces(s string) []string {
 		}
 	}
 
-	strArray = append(strArray, string(str_temp))
+	if str_temp != nil {
+		strArray = append(strArray, string(str_temp))
+	}
 	return strArray
 }
