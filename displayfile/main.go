@@ -19,7 +19,7 @@ func main() {
 
 	file, _ := os.Open("quest8.txt") // For read access.
 
-	buffer := make([]byte, 50)
+	buffer := make([]byte, 14)
 	file.Read(buffer)
 
 	fmt.Println(string(buffer))
