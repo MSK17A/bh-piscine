@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"piscine"
+)
 
 type point struct {
 	x int
@@ -17,5 +19,11 @@ func main() {
 
 	setPoint(points)
 
-	fmt.Printf("x = %d, y = %d\n", points.x, points.y)
+	piscine.PrintStr("x = ")
+	piscine.PrintNbr(points.x)
+	piscine.PrintStr(" ")
+	piscine.PrintStr("y = ")
+	piscine.PrintNbr(points.y)
+	piscine.PrintStr("\n")
+
 }
