@@ -2,12 +2,10 @@ package main
 
 import (
 	"fmt"
-
 	"os"
 )
 
 func main() {
-
 	args := os.Args[1:]
 
 	if len(args) > 1 {
@@ -25,5 +23,4 @@ func main() {
 	file.Read(buffer)
 
 	fmt.Println(string(buffer))
-
 }
