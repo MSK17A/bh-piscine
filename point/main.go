@@ -25,5 +25,4 @@ func main() {
 	piscine.PrintStr("y = ")
 	piscine.PrintNbr(points.y)
 	piscine.PrintStr("\n")
-
 }
