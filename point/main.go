@@ -21,7 +21,7 @@ func main() {
 
 	PrintStr("x = ")
 	PrintNbr(points.x)
-	PrintStr(" ")
+	PrintStr(", ")
 	PrintStr("y = ")
 	PrintNbr(points.y)
 	PrintStr("\n")
