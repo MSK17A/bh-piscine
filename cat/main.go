@@ -1,7 +1,7 @@
 package main
 
 import (
-	"bufio"
+	"io"
 	"io/ioutil"
 	"os"
 
@@ -10,14 +10,13 @@ import (
 
 func main() {
 	args := os.Args[1:]
-
-	if len(args) < 1 {
-		reader := bufio.NewReader(os.Stdin)
-		str, err := reader.ReadString('\n')
-		if err != nil {
-			PrintStr("err")
-		}
-		PrintStr(str)
+	end := false
+	if len(args) < 1 && !end {
+		reader := io.TeeReader(os.Stdin, os.Stdout)
+		ioutil.ReadAll(reader)
+		os.Stdin.Close()
+		os.Stdout.Close()
+		end = true
 	}
 
 	for _, val := range args {
