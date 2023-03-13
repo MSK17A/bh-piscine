@@ -15,7 +15,13 @@ func main() {
 	}
 
 	for _, val := range args {
-		content, _ := ioutil.ReadFile(val) // For read access.
+		content, err := ioutil.ReadFile(val) // For read access.
+		if err != nil {
+			PrintStr("ERROR: open ")
+			PrintStr(val)
+			PrintStr(": no such file or directory\n")
+		}
+
 		PrintStr(string(content))
 	}
 }
