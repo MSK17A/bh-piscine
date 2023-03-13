@@ -3,8 +3,6 @@ package main
 import (
 	"io"
 	"os"
-
-	"github.com/01-edu/z01"
 )
 
 func main() {
@@ -25,23 +23,32 @@ func main() {
 	case "+":
 		{
 			result := a + b
-			io.WriteString(os.Stdout, string(result))
+			PrintNbrStd(os.Stdout, result)
+			io.WriteString(os.Stdout, "\n")
 		}
 	case "-":
 		{
-			io.WriteString(os.Stdout, "Hello World")
+			result := a - b
+			PrintNbrStd(os.Stdout, result)
+			io.WriteString(os.Stdout, "\n")
 		}
 	case "/":
 		{
-			io.WriteString(os.Stdout, "Hello World")
+			result := a / b
+			PrintNbrStd(os.Stdout, result)
+			io.WriteString(os.Stdout, "\n")
 		}
 	case "*":
 		{
-			io.WriteString(os.Stdout, "Hello World")
+			result := a * b
+			PrintNbrStd(os.Stdout, result)
+			io.WriteString(os.Stdout, "\n")
 		}
 	case "%":
 		{
-			io.WriteString(os.Stdout, "Hello World")
+			result := a % b
+			PrintNbrStd(os.Stdout, result)
+			io.WriteString(os.Stdout, "\n")
 		}
 	}
 }
@@ -73,25 +80,25 @@ func Atoi(s string) int {
 	return num * sign
 }
 
-func conv_to_ASCII(num int, sign int) {
+func conv_to_ASCII(num int, sign int) string {
 	if num == 0 {
-		return
+		return "0"
 	}
 	digit := int((num % 10) * sign)
 	_num := int(num / 10)
-	conv_to_ASCII(_num, sign)
-	z01.PrintRune(48 + rune(digit))
+	//z01.PrintRune(48 + rune(digit))
+	return conv_to_ASCII(_num, sign) + string(48+digit)
 }
 
-func PrintNbr(n int) {
+func PrintNbrStd(stdOut *os.File, n int) {
 	sign := 1
 	if n == 0 {
-		z01.PrintRune('0')
+		io.WriteString(stdOut, "0")
 		return
 	}
 	if n < 0 {
 		sign *= -1
-		z01.PrintRune('-')
+		io.WriteString(stdOut, "-")
 	}
-	conv_to_ASCII(n, sign)
+	io.WriteString(stdOut, conv_to_ASCII(n, sign)[1:])
 }
