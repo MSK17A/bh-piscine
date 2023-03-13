@@ -21,6 +21,7 @@ func main() {
 			PrintStr("ERROR: open ")
 			PrintStr(val)
 			PrintStr(": no such file or directory\n")
+			os.Exit(1)
 		}
 
 		PrintStr(string(content))
