@@ -1,7 +1,6 @@
 package main
 
 import (
-	"io"
 	"os"
 )
 
@@ -23,32 +22,32 @@ func main() {
 	case "+":
 		{
 			result := a + b
-			PrintNbrStd(os.Stdout, result)
-			io.WriteString(os.Stdout, "\n")
+			PrintNbrStd(result)
+			os.Stdout.WriteString("\n")
 		}
 	case "-":
 		{
 			result := a - b
-			PrintNbrStd(os.Stdout, result)
-			io.WriteString(os.Stdout, "\n")
+			PrintNbrStd(result)
+			os.Stdout.WriteString("\n")
 		}
 	case "/":
 		{
 			result := a / b
-			PrintNbrStd(os.Stdout, result)
-			io.WriteString(os.Stdout, "\n")
+			PrintNbrStd(result)
+			os.Stdout.WriteString("\n")
 		}
 	case "*":
 		{
 			result := a * b
-			PrintNbrStd(os.Stdout, result)
-			io.WriteString(os.Stdout, "\n")
+			PrintNbrStd(result)
+			os.Stdout.WriteString("\n")
 		}
 	case "%":
 		{
 			result := a % b
-			PrintNbrStd(os.Stdout, result)
-			io.WriteString(os.Stdout, "\n")
+			PrintNbrStd(result)
+			os.Stdout.WriteString("\n")
 		}
 	}
 }
@@ -90,15 +89,15 @@ func conv_to_ASCII(num int, sign int) string {
 	return conv_to_ASCII(_num, sign) + string(48+digit)
 }
 
-func PrintNbrStd(stdOut *os.File, n int) {
+func PrintNbrStd(n int) {
 	sign := 1
 	if n == 0 {
-		io.WriteString(stdOut, "0")
+		os.Stdout.WriteString("0")
 		return
 	}
 	if n < 0 {
 		sign *= -1
-		io.WriteString(stdOut, "-")
+		os.Stdout.WriteString("-")
 	}
-	io.WriteString(stdOut, conv_to_ASCII(n, sign)[1:])
+	os.Stdout.WriteString(conv_to_ASCII(n, sign)[1:])
 }
