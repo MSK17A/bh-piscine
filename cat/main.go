@@ -2,9 +2,10 @@ package main
 
 import (
 	"bufio"
-	"github.com/01-edu/z01"
 	"io/ioutil"
 	"os"
+
+	"github.com/01-edu/z01"
 )
 
 func main() {
@@ -27,7 +28,6 @@ func main() {
 			PrintStr(": no such file or directory\n")
 			os.Exit(1)
 		}
-
 		PrintStr(string(content))
 	}
 }
