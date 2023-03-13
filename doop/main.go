@@ -1,8 +1,10 @@
 package main
 
 import (
-	"fmt"
+	"io"
 	"os"
+
+	"github.com/01-edu/z01"
 )
 
 func main() {
@@ -22,23 +24,24 @@ func main() {
 	switch operator {
 	case "+":
 		{
-			fmt.Println(a + b)
+			result := a + b
+			io.WriteString(os.Stdout, string(result))
 		}
 	case "-":
 		{
-			fmt.Println(a - b)
+			io.WriteString(os.Stdout, "Hello World")
 		}
 	case "/":
 		{
-			fmt.Println(a / b)
+			io.WriteString(os.Stdout, "Hello World")
 		}
 	case "*":
 		{
-			fmt.Println(a * b)
+			io.WriteString(os.Stdout, "Hello World")
 		}
 	case "%":
 		{
-			fmt.Println(a % b)
+			io.WriteString(os.Stdout, "Hello World")
 		}
 	}
 }
@@ -68,4 +71,27 @@ func Atoi(s string) int {
 		num = num*10 + (int(s[i]) - 48)
 	}
 	return num * sign
+}
+
+func conv_to_ASCII(num int, sign int) {
+	if num == 0 {
+		return
+	}
+	digit := int((num % 10) * sign)
+	_num := int(num / 10)
+	conv_to_ASCII(_num, sign)
+	z01.PrintRune(48 + rune(digit))
+}
+
+func PrintNbr(n int) {
+	sign := 1
+	if n == 0 {
+		z01.PrintRune('0')
+		return
+	}
+	if n < 0 {
+		sign *= -1
+		z01.PrintRune('-')
+	}
+	conv_to_ASCII(n, sign)
 }

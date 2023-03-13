@@ -10,13 +10,11 @@ import (
 
 func main() {
 	args := os.Args[1:]
-	end := false
-	if len(args) < 1 && !end {
+	if len(args) < 1 {
 		reader := io.TeeReader(os.Stdin, os.Stdout)
 		ioutil.ReadAll(reader)
 		os.Stdin.Close()
 		os.Stdout.Close()
-		end = true
 	}
 
 	for _, val := range args {
