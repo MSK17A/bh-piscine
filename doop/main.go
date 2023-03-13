@@ -86,7 +86,7 @@ func conv_to_ASCII(num int, sign int) string {
 	}
 	digit := int((num % 10) * sign)
 	_num := int(num / 10)
-	//z01.PrintRune(48 + rune(digit))
+	// z01.PrintRune(48 + rune(digit))
 	return conv_to_ASCII(_num, sign) + string(48+digit)
 }
 
