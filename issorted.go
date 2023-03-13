@@ -1,16 +1,26 @@
 package piscine
 
-func IsSorted(f func(a, b int) int, a []int) bool {
-	if len(a) < 1 {
-		return false
+func IsSorted(f func(a, b int) int, tab []int) bool {
+	length := 0
+	for range tab {
+		length++
 	}
-	sign := f(a[0], a[1])
-
-	for i := 1; i < len(a)-1; i++ {
-		// If the sign changed, it means two numbers aren't sorted
-		if f(a[i], a[i+1]) != sign {
-			return false
+	cap := length
+	sort := 0
+	for i := 0; i < length-1; i++ {
+		isSorted := f(tab[i], tab[i+1])
+		if isSorted > 0 {
+			sort++
+		} else if isSorted < 0 {
+			sort--
+		} else {
+			cap--
 		}
 	}
-	return true
+	cap--
+
+	if sort == cap || sort == -1*cap {
+		return true
+	}
+	return false
 }
