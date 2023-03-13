@@ -17,10 +17,7 @@ func main() {
 	for _, val := range args {
 
 		file, _ := ioutil.ReadFile(val) // For read access.
-		// buffer := make([]byte, 14)
-		// file.Read(buffer)
 		PrintStr(string(file))
-		// PrintStr("\n")
 	}
 
 }
