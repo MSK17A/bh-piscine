@@ -1,18 +1,22 @@
 package main
 
 import (
+	"bufio"
+	"github.com/01-edu/z01"
 	"io/ioutil"
 	"os"
-
-	"github.com/01-edu/z01"
 )
 
 func main() {
 	args := os.Args[1:]
 
 	if len(args) < 1 {
-		PrintStr("Hello\n")
-		return
+		reader := bufio.NewReader(os.Stdin)
+		str, err := reader.ReadString('\n')
+		if err != nil {
+			PrintStr("err")
+		}
+		PrintStr(str)
 	}
 
 	for _, val := range args {
