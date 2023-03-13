@@ -40,9 +40,7 @@ func main() {
 		{
 			fmt.Println(a % b)
 		}
-
 	}
-
 }
 
 func Atoi(s string) int {
