@@ -10,16 +10,14 @@ func main() {
 	args := os.Args[1:]
 
 	if len(args) < 1 {
-		PrintStr("Hello")
+		PrintStr("Hello\n")
 		return
 	}
 
 	for _, val := range args {
-
-		file, _ := ioutil.ReadFile(val) // For read access.
-		PrintStr(string(file))
+		content, _ := ioutil.ReadFile(val) // For read access.
+		PrintStr(string(content))
 	}
-
 }
 
 func PrintStr(s string) {
