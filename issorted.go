@@ -2,7 +2,7 @@ package piscine
 
 func IsSorted(f func(a, b int) int, a []int) bool {
 	if len(a) < 1 {
-		return true
+		return false
 	}
 	sign := f(a[0], a[1])
 

@@ -12,10 +12,12 @@ func main() {
 	result1 := piscine.IsSorted(if_first_is_bigger, a1)
 	result2 := piscine.IsSorted(if_first_is_bigger, a2)
 	result3 := piscine.IsSorted(if_first_is_bigger, []int{-655468, -181010, 176221, -330973, -680281, -464101, -68422, 454601})
+	result4 := piscine.IsSorted(if_first_is_bigger, []int{-646828, -491530, -186555, -16327, 128219, 347682, 426814, 531532})
 
 	fmt.Println(result1)
 	fmt.Println(result2)
 	fmt.Println(result3)
+	fmt.Println(result4)
 }
 
 func if_first_is_bigger(first, second int) int {
