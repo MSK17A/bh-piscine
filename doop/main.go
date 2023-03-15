@@ -59,6 +59,10 @@ func main() {
 		}
 	case "%":
 		{
+			if b == 0 {
+				os.Stdout.WriteString("No modulo by 0\n")
+				return
+			}
 			result := a % b
 			PrintNbrStd(result)
 			os.Stdout.WriteString("\n")
