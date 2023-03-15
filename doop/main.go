@@ -13,6 +13,16 @@ func main() {
 	if args[1] != "+" && args[1] != "-" && args[1] != "/" && args[1] != "*" && args[1] != "%" {
 		return
 	}
+	for _, char := range args[0] {
+		if char < '0' || char > '9' {
+			return
+		}
+	}
+	for _, char := range args[2] {
+		if char < '0' || char > '9' {
+			return
+		}
+	}
 
 	a := Atoi(args[0])
 	b := Atoi(args[2])
@@ -100,4 +110,42 @@ func PrintNbrStd(n int) {
 		os.Stdout.WriteString("-")
 	}
 	os.Stdout.WriteString(conv_to_ASCII(n, sign)[1:])
+}
+
+func AtoiOverflow(a, b, c int64) bool {
+	if a < 0 && c < 0 {
+		return a*b+c < 0
+	} else if a > 0 && c > 0 {
+		return a*b+c > 0
+	}
+	return true
+}
+
+func MultiplyOverflow(a, b, c int64) bool {
+	prod := a*b + c
+	return (prod/b)-c == a
+}
+
+func PlusOverflow(a, b int64) bool {
+	if a < 0 && b < 0 {
+		return a+b < 0
+	} else if a > 0 && b > 0 {
+		return a+b > 0
+	}
+	return true
+}
+
+func MinusOverflow(a, b int64) bool {
+	if a < 0 && b < 0 {
+		if b <= a {
+			return a-b >= 0
+		}
+		return a-b < 0
+	} else if a > 0 && b > 0 {
+		if a <= b {
+			return a-b <= 0
+		}
+		return a-b > 0
+	}
+	return true
 }
