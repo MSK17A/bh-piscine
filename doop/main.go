@@ -31,7 +31,7 @@ func main() {
 	switch operator {
 	case "+":
 		{
-			if !PlusOverflow(int64(a), int64(b)) {
+			if a+b < 9223372036854775807 || a+b < -9223372036854775807 {
 				return
 			}
 			result := a + b
@@ -40,7 +40,7 @@ func main() {
 		}
 	case "-":
 		{
-			if !MinusOverflow(int64(a), int64(b)) {
+			if a-b < 9223372036854775807 || a-b < -9223372036854775807 {
 				return
 			}
 			result := a - b
@@ -59,7 +59,7 @@ func main() {
 		}
 	case "*":
 		{
-			if !MultiplyOverflow(int64(a), int64(b), 0) {
+			if a*b < 9223372036854775807 || a*b < -9223372036854775807 {
 				return
 			}
 			result := a * b
