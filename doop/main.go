@@ -14,12 +14,12 @@ func main() {
 		return
 	}
 	for _, char := range args[0] {
-		if char < '0' || char > '9' {
+		if (char < '0' || char > '9') && char != '-' {
 			return
 		}
 	}
 	for _, char := range args[2] {
-		if char < '0' || char > '9' {
+		if (char < '0' || char > '9') && char != '-' {
 			return
 		}
 	}
