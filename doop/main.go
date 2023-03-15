@@ -40,7 +40,7 @@ func main() {
 		}
 	case "-":
 		{
-			if !MinusOverflow(a, b) {
+			if !MinusOverflow(int64(a), int64(b)) {
 				return
 			}
 			result := a - b
