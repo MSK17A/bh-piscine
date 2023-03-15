@@ -31,12 +31,18 @@ func main() {
 	switch operator {
 	case "+":
 		{
+			if !PlusOverflow(int64(a), int64(b)) {
+				return
+			}
 			result := a + b
 			PrintNbrStd(result)
 			os.Stdout.WriteString("\n")
 		}
 	case "-":
 		{
+			if !MinusOverflow(a, b) {
+				return
+			}
 			result := a - b
 			PrintNbrStd(result)
 			os.Stdout.WriteString("\n")
@@ -53,6 +59,9 @@ func main() {
 		}
 	case "*":
 		{
+			if !MultiplyOverflow(int64(a), int64(b), 0) {
+				return
+			}
 			result := a * b
 			PrintNbrStd(result)
 			os.Stdout.WriteString("\n")
