@@ -7,7 +7,7 @@ import (
 func main() {
 	args := os.Args[1:]
 
-	if len(args) > 3 {
+	if len(args) != 3 {
 		return
 	}
 	if args[1] != "+" && args[1] != "-" && args[1] != "/" && args[1] != "*" && args[1] != "%" {
