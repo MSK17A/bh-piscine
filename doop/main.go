@@ -91,16 +91,13 @@ func Atoi(nbr string) (int64, bool) {
 func Plus(a, b string) {
 	aa, aBool := Atoi(a)
 	if !aBool {
-		PrintConsole("0")
 		return
 	}
 	bb, bBool := Atoi(b)
 	if !bBool {
-		PrintConsole("0")
 		return
 	}
 	if !PlusOverflow(aa, bb) {
-		PrintConsole("0")
 		return
 	}
 	PrintConsole(NbrToStr(aa + bb))
@@ -109,16 +106,13 @@ func Plus(a, b string) {
 func Deduct(a, b string) {
 	aa, aBool := Atoi(a)
 	if !aBool {
-		PrintConsole("0")
 		return
 	}
 	bb, bBool := Atoi(b)
 	if !bBool {
-		PrintConsole("0")
 		return
 	}
 	if !MinusOverflow(aa, bb) {
-		PrintConsole("-0")
 		return
 	}
 	PrintConsole(NbrToStr(aa - bb))
@@ -127,7 +121,6 @@ func Deduct(a, b string) {
 func Devide(a, b string) {
 	bb, bBool := Atoi(b)
 	if !bBool {
-		PrintConsole("0")
 		return
 	}
 	if bb == 0 {
@@ -136,7 +129,6 @@ func Devide(a, b string) {
 	}
 	aa, aBool := Atoi(a)
 	if !aBool {
-		PrintConsole("0")
 		return
 	}
 	PrintConsole(NbrToStr(aa / bb))
@@ -145,16 +137,13 @@ func Devide(a, b string) {
 func Multiply(a, b string) {
 	aa, aBool := Atoi(a)
 	if !aBool {
-		PrintConsole("0")
 		return
 	}
 	bb, bBool := Atoi(b)
 	if !bBool {
-		PrintConsole("0")
 		return
 	}
 	if !MultiplyOverflow(aa, bb, 0) {
-		PrintConsole("0")
 		return
 	}
 	PrintConsole(NbrToStr(aa * bb))
@@ -163,7 +152,6 @@ func Multiply(a, b string) {
 func Mod(a, b string) {
 	bb, bBool := Atoi(b)
 	if !bBool {
-		PrintConsole("0")
 		return
 	}
 	if bb == 0 {
@@ -172,7 +160,6 @@ func Mod(a, b string) {
 	}
 	aa, aBool := Atoi(a)
 	if !aBool {
-		PrintConsole("0")
 		return
 	}
 	PrintConsole(NbrToStr(aa % bb))
