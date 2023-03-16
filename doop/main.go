@@ -190,7 +190,7 @@ func main() {
 		return
 	}
 	if !(IsNumeric(args[0]) && IsNumeric(args[2])) {
-		PrintConsole("0")
+		return
 	}
 	funcsArr := []func(string, string){Plus, Deduct, Devide, Multiply, Mod}
 	operators := []string{"+", "-", "/", "*", "%"}
@@ -200,5 +200,4 @@ func main() {
 			return
 		}
 	}
-	PrintConsole("0")
 }
