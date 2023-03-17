@@ -1,8 +1,6 @@
 package main
 
-import (
-	"os"
-)
+import "os"
 
 func main() {
 	args := os.Args[1:]
@@ -75,6 +73,7 @@ func main() {
 		}
 	}
 }
+
 func Atoi(s string) int {
 	num := 0
 	sign := 1
@@ -99,6 +98,7 @@ func Atoi(s string) int {
 	}
 	return num * sign
 }
+
 func conv_to_ASCII(num int, sign int) string {
 	if num == 0 {
 		return "0"
@@ -108,6 +108,7 @@ func conv_to_ASCII(num int, sign int) string {
 	// z01.PrintRune(48 + rune(digit))
 	return conv_to_ASCII(_num, sign) + string(48+digit)
 }
+
 func PrintNbrStd(n int) {
 	sign := 1
 	if n == 0 {
@@ -120,6 +121,7 @@ func PrintNbrStd(n int) {
 	}
 	os.Stdout.WriteString(conv_to_ASCII(n, sign)[1:])
 }
+
 func AtoiOverflow(a, b, c int64) bool {
 	if a < 0 && c < 0 {
 		return a*b+c < 0
@@ -128,10 +130,12 @@ func AtoiOverflow(a, b, c int64) bool {
 	}
 	return true
 }
+
 func MultiplyOverflow(a, b, c int64) bool {
 	prod := a*b + c
 	return (prod/b)-c == a
 }
+
 func PlusOverflow(a, b int64) bool {
 	if a < 0 && b < 0 {
 		return a+b < 0
@@ -140,6 +144,7 @@ func PlusOverflow(a, b int64) bool {
 	}
 	return true
 }
+
 func MinusOverflow(a, b int64) bool {
 	if a < 0 && b < 0 {
 		if b <= a {
