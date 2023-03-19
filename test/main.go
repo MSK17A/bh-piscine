@@ -6,8 +6,15 @@ import (
 )
 
 func main() {
-	fmt.Println(piscine.FoodDeliveryTime("burger"))
-	fmt.Println(piscine.FoodDeliveryTime("chips"))
-	fmt.Println(piscine.FoodDeliveryTime("nuggets"))
-	fmt.Println(piscine.FoodDeliveryTime("burger") + piscine.FoodDeliveryTime("chips") + piscine.FoodDeliveryTime("nuggets"))
+
+	link := &piscine.List{}
+
+	piscine.ListPushBack(link, "Hello")
+	piscine.ListPushBack(link, "man")
+	piscine.ListPushBack(link, "how are you")
+
+	for link.Head != nil {
+		fmt.Println(link.Head.Data)
+		link.Head = link.Head.Next
+	}
 }
