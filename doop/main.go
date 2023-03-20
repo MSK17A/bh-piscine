@@ -20,24 +20,27 @@ func main() {
 			return
 		}
 	}
-	a := Atoi(args[0])
-	b := Atoi(args[2])
+
 	operator := args[1]
 	switch operator {
 	case "+":
 		{
-			if a+b < 9223372036854775807 || a+b < -9223372036854775807 {
+			if args[0]+args[2] > "9223372036854775807" {
 				return
 			}
+			a := Atoi(args[0])
+			b := Atoi(args[2])
 			result := a + b
 			PrintNbrStd(result)
 			os.Stdout.WriteString("\n")
 		}
 	case "-":
 		{
-			if a-b < 9223372036854775807 || a-b < -9223372036854775807 {
+			if args[0]+args[2] > "9223372036854775807" {
 				return
 			}
+			a := Atoi(args[0])
+			b := Atoi(args[2])
 			result := a - b
 			PrintNbrStd(result)
 			os.Stdout.WriteString("\n")
@@ -48,15 +51,19 @@ func main() {
 				os.Stdout.WriteString("No division by 0\n")
 				return
 			}
+			a := Atoi(args[0])
+			b := Atoi(args[2])
 			result := a / b
 			PrintNbrStd(result)
 			os.Stdout.WriteString("\n")
 		}
 	case "*":
 		{
-			if a*b < 9223372036854775807 || a*b < -9223372036854775807 {
+			if args[0]+args[2] > "9223372036854775807" {
 				return
 			}
+			a := Atoi(args[0])
+			b := Atoi(args[2])
 			result := a * b
 			PrintNbrStd(result)
 			os.Stdout.WriteString("\n")
@@ -67,6 +74,8 @@ func main() {
 				os.Stdout.WriteString("No modulo by 0\n")
 				return
 			}
+			a := Atoi(args[0])
+			b := Atoi(args[2])
 			result := a % b
 			PrintNbrStd(result)
 			os.Stdout.WriteString("\n")
@@ -120,42 +129,4 @@ func PrintNbrStd(n int) {
 		os.Stdout.WriteString("-")
 	}
 	os.Stdout.WriteString(conv_to_ASCII(n, sign)[1:])
-}
-
-func AtoiOverflow(a, b, c int64) bool {
-	if a < 0 && c < 0 {
-		return a*b+c < 0
-	} else if a > 0 && c > 0 {
-		return a*b+c > 0
-	}
-	return true
-}
-
-func MultiplyOverflow(a, b, c int64) bool {
-	prod := a*b + c
-	return (prod/b)-c == a
-}
-
-func PlusOverflow(a, b int64) bool {
-	if a < 0 && b < 0 {
-		return a+b < 0
-	} else if a > 0 && b > 0 {
-		return a+b > 0
-	}
-	return true
-}
-
-func MinusOverflow(a, b int64) bool {
-	if a < 0 && b < 0 {
-		if b <= a {
-			return a-b >= 0
-		}
-		return a-b < 0
-	} else if a > 0 && b > 0 {
-		if a <= b {
-			return a-b <= 0
-		}
-		return a-b > 0
-	}
-	return true
 }
