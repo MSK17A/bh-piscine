@@ -12,12 +12,11 @@ type List struct {
 
 func ListSize(l *List) int {
 	size := 0
-	var tempHead *NodeL
-	tempHead = l.Head
+	tempHead := l.Head
 
 	for tempHead != nil {
 		size++
-		tempHead = l.Head.Next
+		tempHead = tempHead.Next
 	}
 	return size
 }

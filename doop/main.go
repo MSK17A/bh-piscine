@@ -47,12 +47,12 @@ func main() {
 		}
 	case "/":
 		{
+			a := Atoi(args[0])
+			b := Atoi(args[2])
 			if b == 0 {
 				os.Stdout.WriteString("No division by 0\n")
 				return
 			}
-			a := Atoi(args[0])
-			b := Atoi(args[2])
 			result := a / b
 			PrintNbrStd(result)
 			os.Stdout.WriteString("\n")
@@ -70,12 +70,12 @@ func main() {
 		}
 	case "%":
 		{
+			a := Atoi(args[0])
+			b := Atoi(args[2])
 			if b == 0 {
 				os.Stdout.WriteString("No modulo by 0\n")
 				return
 			}
-			a := Atoi(args[0])
-			b := Atoi(args[2])
 			result := a % b
 			PrintNbrStd(result)
 			os.Stdout.WriteString("\n")
