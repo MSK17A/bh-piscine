@@ -21,9 +21,11 @@ func ListPushBack(l *List, data interface{}) {
 	tempNode := NodeL{Data: data, Next: nil}
 	if l.Head == nil {
 		l.Head = &tempNode
+		l.Head.Next = l.Tail
 		return
 	}
 
 	l.Tail = NodeTail(l.Head)
 	l.Tail.Next = &tempNode
+	l.Tail = l.Tail.Next
 }
