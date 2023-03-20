@@ -11,5 +11,5 @@ type List struct {
 }*/
 
 func ListLast(l *List) interface{} {
-	return l.Tail.Data
+	return NodeTail(l.Head).Data
 }
