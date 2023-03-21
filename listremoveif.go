@@ -25,14 +25,16 @@ func ListRemoveIf(l *List, data_ref interface{}) {
 		if current.Data == data_ref {
 			if prev == nil {
 				// Im in the head
-				next = l.Head.Next
-				// l.Head = nil
-				l.Head = next
+				l.Head = l.Head.Next
+				current = nil
 			} else {
 				prev.Next = next
+				current = nil
 			}
+		} else {
+			// Inside an else statement to make sure the prev won't hold the address of the current deleted node
+			prev = current
 		}
-		prev = current
 		current = next
 	}
 }
