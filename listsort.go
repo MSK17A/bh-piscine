@@ -48,6 +48,7 @@ func NodeRemove(l *NodeI, data int) {
 		current = next
 	}
 }
+
 func NodePushBack(l *NodeI, data int) *NodeI {
 	n := &NodeI{Data: data}
 
@@ -61,6 +62,7 @@ func NodePushBack(l *NodeI, data int) *NodeI {
 	iterator.Next = n
 	return l
 }
+
 func insertionSort(head *NodeI) *NodeI {
 	if head == nil || head.Next == nil {
 		return head
