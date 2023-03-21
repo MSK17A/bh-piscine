@@ -13,5 +13,7 @@ type List struct {
 */
 
 func ListMerge(l1 *List, l2 *List) {
-	l1.Tail.Next = l2.Head
+	if l1.Tail != nil && l2.Head != nil {
+		l1.Tail.Next = l2.Head
+	}
 }
