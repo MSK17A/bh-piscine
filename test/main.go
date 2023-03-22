@@ -10,5 +10,5 @@ func main() {
 	piscine.BTreeInsertData(root, "07")
 	piscine.BTreeInsertData(root, "01")
 	//piscine.BTreeInsertData(root, "5")
-	fmt.Println(piscine.BTreeLevelCount(root))
+	fmt.Println(piscine.BTreeLevelCount(root) + 1)
 }
