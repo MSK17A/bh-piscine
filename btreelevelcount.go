@@ -2,7 +2,7 @@ package piscine
 
 func BTreeLevelCount(root *TreeNode) int {
 	if root == nil {
-		return 1
+		return 0
 	}
 
 	BTreeLevelCount(root.Left)
