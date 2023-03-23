@@ -4,14 +4,14 @@ func BTreeTransplant(root, node, rplc *TreeNode) *TreeNode {
 	if root == nil {
 		return nil
 	}
-	if root.Left != nil && root.Left == node {
-		root.Left = rplc
-		root.Left.Parent = root
 
-	} else if root.Right != nil && root.Right == node {
+	if root.Left == node && root.Left != nil { // Update the parent of the rplc
+		rplc.Parent = root
+		root.Left = rplc
+	} else if root.Right == node && root.Right != nil {
+		rplc.Parent = root
 		root.Right = rplc
-		root.Right.Parent = root
-	} else {
+	} else { // Traverse Left and right to search for the required node
 		BTreeTransplant(root.Left, node, rplc)
 		BTreeTransplant(root.Right, node, rplc)
 	}
