@@ -23,21 +23,5 @@ func BTreeDeleteNode(root, node *TreeNode) *TreeNode {
 	} else {
 		root.Right = BTreeDeleteNode(root.Right, node)
 	}
-
 	return root
-}
-
-func BTremoveMax(root *TreeNode) {
-	if root.Right == nil {
-		root = nil
-		return
-	}
-	BTremoveMax(root.Right)
-}
-func BTremoveMin(root *TreeNode) {
-	if root.Left == nil {
-		root = nil
-		return
-	}
-	BTremoveMin(root.Left)
 }
