@@ -9,19 +9,6 @@ func ListSort(l *NodeI) *NodeI {
 	return insertionSort(l)
 }
 
-func findMax(l *NodeI) *NodeI {
-	max := l
-	index_i := l
-
-	for index_i != nil {
-		if index_i.Data > max.Data {
-			max = index_i
-		}
-		index_i = index_i.Next
-	}
-	return max
-}
-
 func NodeRemove(l *NodeI, data int) {
 	var prev *NodeI
 	var next *NodeI

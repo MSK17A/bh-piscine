@@ -51,7 +51,6 @@ func placeQueens(col int) {
 		// Set to zero to backtrack
 		board[i][col] = 0
 	}
-	return
 }
 
 func EightQueens() {
